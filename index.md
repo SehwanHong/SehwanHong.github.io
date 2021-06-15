@@ -4,4 +4,4 @@ Simple website to talk about what I have learned on neural networks.
 
 ## First project
 
-Understanding ResNet.
+Understanding [ResNet](sehwanhong.github.io/CNN/ResNet/).
