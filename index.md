@@ -2,6 +2,6 @@
 
 Simple website to talk about what I have learned on neural networks.
 
-## First project
+## Curiosity Killed the Cat Project
 
-Understanding [ResNet](https://sehwanhong.github.io/CNN/ResNet/).
+Basic Unity project about the game [Curiosity Killed the Cat](https://sehwanhong.github.io/CKC/)
