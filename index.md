@@ -2,6 +2,6 @@
 
 Simple website to talk about what I have learned on neural networks.
 
-## ResNet
+## NerualNet
 
-Basic Informaiton about the ResNet. [Follow the Link](../ResNet)
+All information about Neural Network is on [this page](../NeuarlNet)
