@@ -1,7 +1,7 @@
 # Sehwan Hong
 
-Simple website to talk about what I have learned on neural networks.
+Simple website to talk about what I have learned on Artificial Intelligence
 
-## NerualNet
+## Artificial Intelligence
 
-All information about Neural Network is on [this page](../NeuralNet)
+All information about Aritificial Intelligence is on [this page](../Artificial-Intelligence)
