@@ -1,14 +1,11 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
-lang: ko
+lang: en
 ---
 
 # Sehwan Hong
 
-Simple website to talk about what I have learned on Artificial Intelligence
+Simple Blog to talk about what I have learned on Artificial Intelligence
 
 ## Artificial Intelligence
 
