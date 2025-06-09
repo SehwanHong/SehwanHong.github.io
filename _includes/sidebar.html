@@ -1,0 +1,17 @@
+{% comment %}
+  This sidebar displays a list of documents if the current page 
+  belongs to the 'Artificial-Intelligence' collection.
+{% endcomment %}
+
+{% if page.collection == 'Artificial-Intelligence' %}
+  <h4>Artificial Intelligence</h4>
+  <ul>
+    {% for doc in site.collections['Artificial-Intelligence'].docs %}
+      <li>
+        <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
+          {{ doc.title | default: "Untitled" }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

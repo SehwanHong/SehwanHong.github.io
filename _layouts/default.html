@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title | default: site.title | escape }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        {% include header.html %}
+      </header>
+      <main id="main-content">
+        {% if page.url != "/" %}
+        <aside class="sidebar" id="sidebar">
+          {% include sidebar.html %}
+        </aside>
+        {% endif %}
+        <section class="content" id="content">
+          {{ content }}
+        </section>
+      </main>
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
+  </body>
+</html> 
