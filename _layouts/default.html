@@ -1,20 +1,26 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'ko' }}">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>{{ page.title | default: site.title | escape }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   </head>
   <body>
-    {%- assign page_lang = page.lang | default: site.lang | default: "ko" -%}
-    {%- if page_lang == "ko" -%}
-      {% include header_ko.html %}
-    {%- elsif page_lang == "en" -%}
-      {% include header_en.html %}
-    {%- else -%}
-      {% include header_ko.html %} {%- comment -%} 기본적으로 한국어 헤더를 사용합니다. {%- endcomment -%}
-    {%- endif -%}
-
-    {{ content }}
+    <div class="container">
+      <header>
+        {% include header.html %}
+      </header>
+      <main>
+        <aside class="sidebar">
+          {% include sidebar.html %}
+        </aside>
+        <section class="content">
+          {{ content }}
+        </section>
+      </main>
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
   </body>
 </html> 

@@ -1,5 +1,80 @@
 ---
 ---
 
-// 여기에 SCSS/CSS 코드를 작성합니다.
-// 지금은 비워둡니다. 
+body {
+  font-family: sans-serif;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: #f8f9fa;
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: #333;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  margin-right: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+} 
