@@ -1,8 +1,20 @@
 ---
 ---
 
+@font-face {
+  font-family: 'MonoplexKR';
+  src: url('../fonts/MonoplexKR-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'MonoplexKR';
+  src: url('../fonts/MonoplexKR-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'MonoplexKR', sans-serif;
   margin: 0;
   color: #333;
 }
