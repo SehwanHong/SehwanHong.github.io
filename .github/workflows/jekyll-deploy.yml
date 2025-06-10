@@ -41,7 +41,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           export JEKYLL_ENV=production
-          bundle exec jekyll build --source . --destination _site
+          bundle exec jekyll build --source . --destination _site --trace
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
