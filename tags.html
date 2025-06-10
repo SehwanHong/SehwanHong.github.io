@@ -4,12 +4,23 @@ title: 모든 태그
 permalink: /tags/
 ---
 <div class="tag-cloud">
-  {% for tag in site.tags | sort %}
-    {% assign t = tag | last %}
-    {% assign posts_count = t | size %}
-    <a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/" class="tag-item tag-size-{{ posts_count }}">
-      {{ tag[0] }} ({{ posts_count }})
-    </a>
+  {% assign all_tags = "" | split: "," %}
+  {% for doc in site.documents %}
+    {% if doc.tags %}
+      {% for tag in doc.tags %}
+        {% assign all_tags = all_tags | push: tag | uniq %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% for tag in all_tags | sort %}
+    {% assign posts_with_tag = site.documents | where_exp: "doc", "doc.tags contains tag" %}
+    {% assign posts_count = posts_with_tag | size %}
+    {% if posts_count > 0 %}
+      <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="tag-item tag-size-{{ posts_count }}">
+        {{ tag }} ({{ posts_count }})
+      </a>
+    {% endif %}
   {% endfor %}
 </div>
 

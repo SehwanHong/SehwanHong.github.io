@@ -6,7 +6,7 @@
 {% if page.collection == 'Artificial-Intelligence' %}
   <h4>Artificial Intelligence</h4>
   <ul>
-    {% for doc in site.collections['Artificial-Intelligence'].docs %}
+    {% for doc in site.collections['Artificial-Intelligence'].docs | sort: 'title' %}
       <li>
         <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
           {{ doc.title | default: "Untitled" }}
@@ -15,3 +15,25 @@
     {% endfor %}
   </ul>
 {% endif %}
+
+<hr>
+
+<h4>Tags</h4>
+<ul>
+  {% assign all_tags = "" | split: "," %}
+  {% for doc in site.documents %}
+    {% if doc.tags %}
+      {% for tag in doc.tags %}
+        {% assign all_tags = all_tags | push: tag | uniq %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% for tag in all_tags | sort %}
+    <li>
+      <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">
+        {{ tag }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
