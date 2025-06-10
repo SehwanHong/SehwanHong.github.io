@@ -11,11 +11,9 @@
         {% include header.html %}
       </header>
       <main id="main-content">
-        {% if page.url != "/" %}
         <aside class="sidebar" id="sidebar">
           {% include sidebar.html %}
         </aside>
-        {% endif %}
         <section class="content" id="content">
           {{ content }}
         </section>

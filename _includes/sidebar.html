@@ -1,17 +1,21 @@
-{% comment %}
-  This sidebar displays a list of documents if the current page 
-  belongs to the 'Artificial-Intelligence' collection.
-{% endcomment %}
+<hr>
 
-{% if page.collection == 'Artificial-Intelligence' %}
-  <h4>Artificial Intelligence</h4>
-  <ul>
-    {% for doc in site.collections['Artificial-Intelligence'].docs %}
-      <li>
-        <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
-          {{ doc.title | default: "Untitled" }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+<h4>Tags</h4>
+<ul>
+  {% assign all_tags = "" | split: "," %}
+  {% for doc in site.documents %}
+    {% if doc.tags %}
+      {% for tag in doc.tags %}
+        {% assign all_tags = all_tags | push: tag | uniq %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% for tag in all_tags | sort %}
+    <li>
+      <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">
+        {{ tag }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
