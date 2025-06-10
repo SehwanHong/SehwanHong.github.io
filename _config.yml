@@ -23,6 +23,8 @@ collections:
 jekyll-archives:
   enabled:
     - tags
+  collections:
+    - artificial-intelligence
   layouts:
     tag: tag
   permalinks:
