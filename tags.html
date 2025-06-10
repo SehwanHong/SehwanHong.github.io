@@ -1,0 +1,47 @@
+---
+layout: default
+title: "모든 태그"
+permalink: /tags/
+---
+<div class="tag-cloud">
+  {% assign all_tags = "" | split: "," %}
+  {% for doc in site.documents %}
+    {% if doc.tags %}
+      {% for tag in doc.tags %}
+        {% assign all_tags = all_tags | push: tag | uniq %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% for tag in all_tags | sort %}
+    {% assign posts_with_tag = site.documents | where_exp: "doc", "doc.tags contains tag" %}
+    {% assign posts_count = posts_with_tag | size %}
+    {% if posts_count > 0 %}
+      <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="tag-item">
+        {{ tag }} ({{ posts_count }})
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+.tag-cloud {
+    text-align: center;
+    padding: 20px 0;
+}
+.tag-cloud .tag-item {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+}
+.tag-cloud .tag-item:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+</style> 
