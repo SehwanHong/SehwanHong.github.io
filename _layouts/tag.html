@@ -4,10 +4,10 @@ layout: default
 <h1>Tag: {{ page.tag }}</h1>
 
 <ul>
-{% for post in site.tags[page.tag] %}
+{% assign posts_sorted = site.tags[page.tag] | sort: 'title' %}
+{% for post in posts_sorted %}
   <li>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    <span style="color: #828282;"> - {{ post.date | date: "%Y년 %m월 %d일" }}</span>
   </li>
 {% endfor %}
 </ul> 
