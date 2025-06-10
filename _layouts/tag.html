@@ -4,10 +4,12 @@ layout: default
 <h1>Tag: {{ page.tag }}</h1>
 
 <ul>
-{% assign posts_sorted = site.tags[page.tag] | sort: 'title' %}
-{% for post in posts_sorted %}
+{% assign posts_with_tag = site.documents | where_exp: "doc", "doc.tags contains page.tag" | sort: 'title' %}
+{% for post in posts_with_tag %}
   <li>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   </li>
+{% else %}
+  <li>이 태그에 해당하는 글이 아직 없습니다.</li>
 {% endfor %}
 </ul> 
