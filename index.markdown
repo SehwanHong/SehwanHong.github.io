@@ -9,4 +9,5 @@ Simple Blog to talk about what I have learned on Artificial Intelligence
 
 ## Artificial Intelligence
 
-All information about Aritificial Intelligence is on [this page]({% link _Artificial-Intelligence/index.md %})
+{% assign ai_home = site.documents | where_exp: "item", "item.collection == 'artificial-intelligence' and item.slug == 'index'" | first %}
+All information about Aritificial Intelligence is on [this page]({{ ai_home.url | relative_url }})
