@@ -14,5 +14,6 @@ plugins:
   - jekyll-feed
 
 collections:
-  Artificial-Intelligence:
+  artificial-intelligence:
     output: true
+    permalink: /:collection/:name
