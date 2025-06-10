@@ -24,6 +24,7 @@ jekyll-archives:
   enabled:
     - tags
   layouts:
-    tag: tag
+    tag: tag      # 개별 태그 페이지(/tags/ToNN/)는 tag.html 레이아웃 사용
+    type: "archives" # 태그 목록 페이지(/tags/)는 archives.html 레이아웃 사용
   permalinks:
     tag: /tags/:name/
