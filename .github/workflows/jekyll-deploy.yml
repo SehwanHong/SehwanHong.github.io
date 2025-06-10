@@ -33,14 +33,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3.0'
-          bundler-cache: true
-      
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+          bundler-cache: false
 
+      - name: Install dependencies
+        run: bundle install
+      
       - name: Build with Jekyll
-        run: bundle exec jekyll build --source . --destination _site
+        run: |
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --source . --destination _site
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
