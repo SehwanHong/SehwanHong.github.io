@@ -24,13 +24,17 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3.0'
-          bundler-cache: true
+          bundler-cache: false
+
+      - name: Install dependencies
+        run: bundle install
       
       - name: Build with Jekyll
-        run: |
-          export JEKYLL_ENV=production
-          bundle exec jekyll build --source . --destination _site
+        run: bundle exec jekyll build --source . --destination _site --trace
 
+      - name: Check build output
+        run: ls -R _site
+        
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
