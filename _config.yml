@@ -12,8 +12,18 @@ github_username:  SehwanHong
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-archives
 
 collections:
   artificial-intelligence:
     output: true
     permalink: /:collection/:name
+
+# Jekyll Archives
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
