@@ -13,7 +13,8 @@ permalink: /tags/
     {% endif %}
   {% endfor %}
   
-  {% for tag in all_tags | sort %}
+  {% assign sorted_tags = all_tags | sort %}
+  {% for tag in sorted_tags %}
     {% assign posts_with_tag = site.documents | where_exp: "doc", "doc.tags contains tag" %}
     {% assign posts_count = posts_with_tag | size %}
     {% if posts_count > 0 %}
