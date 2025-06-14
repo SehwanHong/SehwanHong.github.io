@@ -7,13 +7,32 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sehwanhong.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: ko # 기본 언어 설정
-github_username:  SehwanHong
+github_username: SehwanHong
 
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO 태그 설정
+author:
+  name: Sehwan Hong
+  email: samhong657@gmail.com
+
+social:
+  name: Sehwan Hong
+  links:
+    - https://github.com/SehwanHong
 
 collections:
   artificial-intelligence:
     output: true
     permalink: /:collection/:name
+
+# GitHub Pages에서 지원하는 추가 설정
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
