@@ -15,7 +15,10 @@ source "https://rubygems.org"
 # gem "minima", "~> 2.5"
 
 # GitHub Pages에서 사용하는 공식 gem - 모든 의존성이 포함되어 있습니다
-gem "github-pages", "~> 232", group: :jekyll_plugins
+# gem "github-pages", "~> 232", group: :jekyll_plugins
+
+# Use plain Jekyll so that custom plugins in _plugins/ are loaded
+gem "jekyll", "~> 4.3.2", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
