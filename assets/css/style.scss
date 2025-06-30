@@ -159,4 +159,15 @@ code {
 .highlight .vc { color: #24292e; }
 .highlight .vg { color: #24292e; }
 .highlight .vi { color: #24292e; }
-.highlight .il { color: #005cc5; } 
+.highlight .il { color: #005cc5; }
+
+/* Line wrapping for long words, URLs, and code blocks */
+#content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+pre, code {
+  white-space: pre-wrap; /* keep indentation but allow wrap */
+  word-wrap: break-word;
+} 
