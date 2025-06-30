@@ -14,7 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-tagging
+  # - jekyll-tagging (disabled)
 
 # SEO 태그 설정
 author:
@@ -37,7 +37,3 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
-# Tagging configuration
-tag_permalink: /tags/:tag/
-tag_page_layout: tag
