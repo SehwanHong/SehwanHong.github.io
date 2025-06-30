@@ -29,6 +29,15 @@ jobs:
           repository: SehwanHong/Artificial-Intelligence
           path: _artificial-intelligence
 
+      - name: Checkout LLM repository into _llm folder
+        uses: actions/checkout@v4
+        with:
+          repository: SehwanHong/LLM
+          path: LLM
+
+      - name: Remove inner .git (make Jekyll-safe)
+        run: rm -rf LLM/.git
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
