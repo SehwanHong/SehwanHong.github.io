@@ -39,6 +39,7 @@ header {
   background: #f8f9fa;
   padding: 20px;
   border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
 }
 
 .header-container {
@@ -81,6 +82,7 @@ main {
 
 .sidebar {
   width: 250px;
+  margin-right: 20px;
   padding: 20px;
   background: #f8f9fa;
   border: 1px solid #dee2e6;
@@ -89,12 +91,14 @@ main {
 
 .content {
   flex: 1;
+  min-width: 0;
   padding: 20px;
   border: 1px solid #dee2e6;
   border-top: none;
 }
 
 footer {
+  margin-top: 20px;
   padding: 20px;
   text-align: center;
   background: #f8f9fa;
