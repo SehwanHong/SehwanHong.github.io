@@ -41,6 +41,19 @@ jobs:
           ruby-version: '3.3.0'
           bundler-cache: true
       
+      - name: Combine assets from external repositories
+        run: |
+          if [ -d "_artificial-intelligence/assets" ]; then
+            mkdir -p assets
+            cp -r _artificial-intelligence/assets/* assets/
+            echo "Merged assets from _artificial-intelligence/assets"
+          fi
+          if [ -d "LLM/assets" ]; then
+            mkdir -p assets
+            cp -r LLM/assets/* assets/
+            echo "Merged assets from LLM/assets"
+          fi
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --source . --destination _site
       
